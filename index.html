@@ -4,17 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/suitcases.png" type="image/x-icon">
     <title>Yatra</title>
-    <!-- bootstrap css plugin -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-</head>
-<body>
-    <h1>Yatra</h1>
-
-    <!-- bootstrap js plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
     <!-- VueJs plugin -->
     <script src="https://unpkg.com/vue@3"></script>
+    <!-- bootstrap css plugin -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body id="app">
+    <header>
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top container">
+            <a href="/" class="navbar-brand">
+                <img src="/assets/images/suitcases.png" alt="logo" width="40" height="40" class="d-inline-block align-top">
+                <h1 class="display-6 d-inline-block mx-2 d-none d-sm-inline">Yatra</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-lg-start" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li v-for="navItem in navItems" class="nav-item active">
+                        <a href="#" class="nav-link active px-3">
+                            <img :src="navItem.icon" :alt="navItem.alt" class="container-fluid">
+                            <h6 class="d-inline d-lg-block">{{navItem.name}}</h6>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <script src="/main.js"></script>
+    <!-- mounting app -->
+    <script>
+        const mountedApp = app.mount("#app")
+    </script>
+    <!-- bootstrap js plugins -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 </body>
 </html>
