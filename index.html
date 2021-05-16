@@ -14,7 +14,7 @@
 </head>
 <body id="app">
     <header>
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top container">
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid">
             <a href="/" class="navbar-brand">
                 <img src="/assets/images/suitcases.png" alt="logo" width="40" height="40" class="d-inline-block align-top">
                 <h1 class="display-6 d-inline-block mx-2 d-none d-sm-inline">Yatra</h1>
@@ -26,9 +26,18 @@
                 <ul class="navbar-nav mr-auto">
                     <li v-for="navItem in navItems" class="nav-item active">
                         <a href="#" class="nav-link active px-3">
-                            <img :src="navItem.icon" :alt="navItem.alt" class="container-fluid">
+                            <img :src="navItem.icon" :alt="navItem.alt">
                             <h6 class="d-inline d-lg-block">{{navItem.name}}</h6>
                         </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- for signin and signup -->
+            <div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
+                <h5 class="d-block d-lg-none">Account and Settings</h5>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <button type="button">Log in</button>
                     </li>
                 </ul>
             </div>
