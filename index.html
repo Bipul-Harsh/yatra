@@ -41,10 +41,10 @@
             <div class="collapse navbar-collapse justify-content-lg-end" id="navbarSupportedContent">
                 <h5 class="d-block d-lg-none">Account and Settings</h5>
                 <ul class="navbar-nav mr-auto">
-                    <li v-if="authUser.length == 0" class="nav-item active">
-                        <button type="button" class="btn btn-danger">Log in</button>
+                    <li v-if="authUser.length == 0" class="nav-item active me-2">
+                        <button type="button" class="btn btn-danger" @click="handlelogwindow()">Log in</button>
                     </li>
-                    <li v-else class="nav-item active">
+                    <li v-else class="nav-item active me-2">
                         <div class="dropdown rounded">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">{{authUser[currUser].userName}}</button>
                             <ul class="dropdown-menu rounded px-3" aria-labelledby="dropdownMenuButton1">
@@ -57,12 +57,18 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <button type="button" class="btn btn-light"><img src="/assets/images/checkout.svg" alt="" width="24" height="24"> <span class="badge bg-secondary">{{checkoutItems.length}}</span></button>
+                        <button type="button" class="btn btn-default position-relative"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">+{{checkoutItems.length}}</span></button>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
+    <!-- log window -->
+    <div class="container-fluid w-100 h-100 position-absolute d-flex" :class="[logwindowShow ? 'd-flex' : 'd-none']" id="logpanel">
+        <div class="container align-self-center rounded" id="logwindow" @blur="handlelogwindow()">
+            <button type="button" class="btn-close position-absolute" aria-label="Close" @click="handlelogwindow()"></button>
+        </div>
+    </div>
 
     <script src="/main.js"></script>
     <!-- mounting app -->
