@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/images/suitcases.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./assets/images/logo.png" type="image/x-icon">
     <title>Yatra | Online Flight and Hotel Booking</title>
     <meta name="description" content="Find Flights and Hotels at the best price, with our discounts and ">
     <!-- VueJs plugin -->
@@ -20,7 +20,7 @@
         <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid shadow-sm p-0 px-3">
             <div class="navbar-brand px-lg-5">
                 <a href="/" class="navbar-brand">
-                    <img src="/assets/images/suitcases.png" alt="logo" width="40" height="40" class="d-inline-block align-top">
+                    <img src="/assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
                     <h1 class="display-6 d-inline-block mx-2">Yatra</h1>
                 </a>
             </div>
@@ -31,7 +31,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li v-for="navItem in navItems" class="nav-item active">
                         <button href="#" class="nav-link active px-3 rounded btn btn-default">
-                            <img :src="navItem.icon" :alt="navItem.alt">
+                            <img :src="navItem.icon" :alt="navItem.alt" width="24" height="24">
                             <h6 class="d-inline d-lg-block p-3 p-lg-0">{{navItem.name}}</h6>
                         </button>
                     </li>
@@ -48,16 +48,16 @@
                         <div class="dropdown rounded">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">{{authUser[currUser].userName}}</button>
                             <ul class="dropdown-menu rounded px-3" aria-labelledby="dropdownMenuButton1">
-                                <li><a href="#" class="dropdown-item">Profile</a></li>
-                                <li><a href="#" class="dropdown-item">Orders</a></li>
-                                <li><a href="#" class="dropdown-item">Wishlist</a></li>
+                                <li><a href="#" class="dropdown-item py-2">Profile</a></li>
+                                <li><a href="#" class="dropdown-item py-2">Orders</a></li>
+                                <li><a href="#" class="dropdown-item py-2">Wishlist</a></li>
                                 <li><hr class="dropdown-divider"></li>
                                 <li><button type="button" class="btn btn-danger container-fluid">SignOut</button></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <button type="button" class="btn btn-light"><img src="/assets/images/checkout.png" alt=""> <span class="badge bg-secondary">{{checkoutItems.length}}</span></button>
+                        <button type="button" class="btn btn-light"><img src="/assets/images/checkout.svg" alt="" width="24" height="24"> <span class="badge bg-secondary">{{checkoutItems.length}}</span></button>
                     </li>
                 </ul>
             </div>
