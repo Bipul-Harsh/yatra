@@ -7,7 +7,7 @@ const app = Vue.createApp({
                 {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg"}
             ],
             checkoutItems: [],
-            authUser: [{username: "hellow"}],
+            authUser: [],
             currUser: 0,
             logwindowShow: false,
         }
