@@ -5,11 +5,16 @@ header{
 }
 #logpanel{
     background-color: rgba(0, 0, 0, 0.356);
-    z-index: 1031
+    z-index: 1031;
+    min-height: 100%;
 }
 #logwindow{
-    max-width: 90%;
-    height: 90%;
-    min-width: 500px;
+    position: relative;
+    z-index: 1032;
+    width: 90%;
     background-color: white;
+}
+#navButton:hover{
+    background-color: rgba(0, 0, 0, 0.171);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.562);
 }

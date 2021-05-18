@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse justify-content-lg-start" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li v-for="navItem in navItems" class="nav-item active">
-                        <button href="#" class="nav-link active px-3 rounded btn btn-default">
+                        <button href="#" class="nav-link active px-3 rounded btn btn-default mt-1 w-100 text-start" id="navButton">
                             <img :src="navItem.icon" :alt="navItem.alt" width="24" height="24">
                             <h6 class="d-inline d-lg-block p-3 p-lg-0">{{navItem.name}}</h6>
                         </button>
@@ -46,34 +46,36 @@
                     </li>
                     <li v-else class="nav-item active me-2">
                         <div class="dropdown rounded">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">{{authUser[currUser].userName}}</button>
-                            <ul class="dropdown-menu rounded px-3" aria-labelledby="dropdownMenuButton1">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">{{authUser[currUser].username}}</button>
+                            <ul class="dropdown-menu rounded px-3 me-bg-8" aria-labelledby="dropdownMenuButton1">
                                 <li><a href="#" class="dropdown-item py-2">Profile</a></li>
                                 <li><a href="#" class="dropdown-item py-2">Orders</a></li>
                                 <li><a href="#" class="dropdown-item py-2">Wishlist</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><button type="button" class="btn btn-danger container-fluid">SignOut</button></li>
+                                <li><button type="button" class="btn btn-danger container-fluid" @click="signout()">SignOut</button></li>
                             </ul>
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <button type="button" class="btn btn-default position-relative"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">+{{checkoutItems.length}}</span></button>
+                        <button type="button" class="btn btn-default position-relative mt-1"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">+{{checkoutItems.length}}</span></button>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
     <!-- log window -->
-    <div class="container-fluid w-100 h-100 position-absolute d-flex" :class="[logwindowShow ? 'd-flex' : 'd-none']" id="logpanel">
-        <div class="container align-self-center rounded" id="logwindow" @blur="handlelogwindow()">
-            <button type="button" class="btn-close position-absolute" aria-label="Close" @click="handlelogwindow()"></button>
+    <div class="container-fluid w-100 position-absolute d-flex p-2" id="logpanel" :class="[logwindowShow ? 'd-flex' : 'd-none']">
+        <div class="container align-self-center rounded overflow-auto shadow pb-4 px-4" id="logwindow">
+            <button type="button" class="btn-close position-relative mt-2 justify-self-end" aria-label="Close" @click="handlelogwindow()"></button>
+            <logwindow @userdata-submitted="addUser" @handle-logwindow="handlelogwindow()"></logwindow>
         </div>
     </div>
 
+
     <script src="/main.js"></script>
-    <!-- mounting app -->
+    <script src="/components/logwindow.js"></script>
     <script>
-        const mountedApp = app.mount("#app")
+        app.mount("#app")
     </script>
     <!-- bootstrap js plugins -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
