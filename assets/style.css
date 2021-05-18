@@ -15,6 +15,6 @@ header{
     background-color: white;
 }
 #navButton:hover{
-    background-color: rgba(0, 0, 0, 0.171);
+    background-color: rgba(0, 0, 0, 0.09);
     border-bottom: 1px solid rgba(0, 0, 0, 0.562);
 }
