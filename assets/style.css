@@ -1,7 +1,12 @@
 body{
     font-family: 'Open Sans', sans-serif;
 }
-header{
+nav{
+    background-color: white;
+}
+h1{
+    font-family: 'Comfortaa', cursive;
+    text-shadow: -2px 2px rgb(128 128 128 / 50%);
 }
 #logpanel{
     background-color: rgba(0, 0, 0, 0.356);
@@ -17,4 +22,9 @@ header{
 #navButton:hover{
     background-color: rgba(0, 0, 0, 0.09);
     border-bottom: 1px solid rgba(0, 0, 0, 0.562);
+}
+#landing{
+    padding: 0;
+    padding-top: 6rem;
+    overflow: hidden;
 }

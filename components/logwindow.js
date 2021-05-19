@@ -128,6 +128,7 @@ app.component("logwindow", {
             this.email = '';
             this.gender = '';
             this.password = '';
+            this.repassword = ''
         }
     },
 })
