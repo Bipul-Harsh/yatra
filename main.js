@@ -5,7 +5,12 @@ const app = Vue.createApp({
             authUser: [],
             currUser: 0,
             logwindowShow: false,
-            route: 'landing'
+            route: 'landing',
+            image: '/assets/images/airport_terminal.png',
+            cards: [
+                {color: 'rgb(134 180 255)', image: ''},
+                {color: 'rgb(255 218 134)', image: ''},
+            ]
         }
     },
     methods: {
