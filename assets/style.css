@@ -69,7 +69,7 @@ section{
 #card-final{
     font-size: 1.3rem;
     font-weight: 800;
-    margin-top: 6vh;   
+    margin-top: 5vh;   
 }
 @media(max-width: 991px){
     #animation-container{
@@ -85,4 +85,10 @@ section{
 }
 #flight{
     background-image: url('/assets/images/airport_terminal.webp')
+}
+#hotel{
+    background-image: url('/assets/images/hotel.webp');
+}
+#package{
+    background-image: url('/assets/images/package_background.png');
 }
