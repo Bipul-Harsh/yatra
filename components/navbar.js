@@ -18,10 +18,10 @@ app.component('navbar', {
     `<header class="position-relative">
         <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid shadow-sm p-0 px-3">
             <div class="navbar-brand px-lg-5">
-                <a href="/" class="navbar-brand">
+                <span href="/" class="navbar-brand a" @click="changeRoute('landing')">
                     <img src="/assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
                     <h1 class="display-6 d-inline-block mx-2">Yatra</h1>
-                </a>
+                </span>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -80,6 +80,9 @@ app.component('navbar', {
         },
         signout(){
             this.$emit('signout')
+        },
+        changeRoute(route){
+            this.$emit('changeroute', route)
         }
     }
 })

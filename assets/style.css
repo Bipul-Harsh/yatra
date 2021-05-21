@@ -8,6 +8,9 @@ h1{
     font-family: 'Comfortaa', cursive;
     text-shadow: -2px 2px rgb(128 128 128 / 50%);
 }
+.a{
+    cursor: pointer;
+}
 #logpanel{
     background-color: rgba(0, 0, 0, 0.356);
     top: 0;

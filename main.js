@@ -6,11 +6,6 @@ const app = Vue.createApp({
             currUser: 0,
             logwindowShow: false,
             route: 'landing',
-            image: '/assets/images/airport_terminal.png',
-            cards: [
-                {color: 'rgb(134 180 255)', image: ''},
-                {color: 'rgb(255 218 134)', image: ''},
-            ]
         }
     },
     methods: {
@@ -26,6 +21,9 @@ const app = Vue.createApp({
                 this.authUser.pop()
                 alert("You are sucessfully logged out")
             }
+        },
+        changeRoute(route){
+            this.route = route
         }
     },
     computed: {
