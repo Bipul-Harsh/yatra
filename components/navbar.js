@@ -29,7 +29,7 @@ app.component('navbar', {
             <div class="collapse navbar-collapse justify-content-lg-start" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li v-for="navItem in navItems" class="nav-item active">
-                        <button href="#" class="nav-link active px-3 rounded btn btn-default mt-1 w-100 text-start" id="navButton">
+                        <button href="#" class="nav-link active px-3 rounded btn btn-default mt-1 w-100 text-start" id="navButton" @click="changeRoute(navItem.route)">
                             <img :src="navItem.icon" :alt="navItem.alt" width="24" height="24">
                             <h6 class="d-inline d-lg-block p-3 p-lg-0">{{navItem.name}}</h6>
                         </button>
@@ -65,9 +65,9 @@ app.component('navbar', {
     data(){
         return{
             navItems: [
-                {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg"},
-                {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg"},
-                {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg"}
+                {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
+                {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
+                {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg", route: "package"}
             ],
             authUser:this.authuser,
             checkoutItems:this.checkoutitems,

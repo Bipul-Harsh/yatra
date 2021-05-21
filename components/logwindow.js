@@ -117,7 +117,8 @@ app.component("logwindow", {
                 gender: this.gender,
                 phone: this.phone,
                 password: this.password,
-                email: this.email
+                email: this.email,
+                checkoutItems: []
             }
             this.$emit('userdata-submitted', authUser);
             this.$emit('handle-logwindow');

@@ -1,7 +1,6 @@
 const app = Vue.createApp({
     data(){
         return {
-            checkoutItems: [],
             authUser: [],
             currUser: 0,
             logwindowShow: false,
@@ -27,6 +26,11 @@ const app = Vue.createApp({
         }
     },
     computed: {
-
+        checkoutItems(){
+            if(this.currUser.length > 0)
+                return this.authUser[this.currUser].checkoutItems
+            else
+                return []
+        }
     }
 })

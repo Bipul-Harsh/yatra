@@ -14,7 +14,7 @@ app.component('landingpage', {
         </div>
     </section>
     <section class="container-lg" id="flight">
-        <div class="row w-100 h-100" id="card-frame" @click="handlelogwindow()">
+        <div class="row w-100 h-100" id="card-frame" @click="changeRoute('flight')">
             <div class="col-lg-4 col-12" id="animation-container">
                 <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_ZL8df8.json" mode="bounce" background="transparent" speed="1" loop  autoplay></lottie-player>
             </div>
@@ -25,7 +25,7 @@ app.component('landingpage', {
         </div>
     </section>
     <section class="container-lg" id="hotel">
-        <div class="row w-100 h-100" id="card-frame" @click="handlelogwindow()">
+        <div class="row w-100 h-100" id="card-frame" @click="changeRoute('hotel')">
             <div class="col-lg-4 col-12" id="animation-container">
                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_fxvz0c.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
@@ -36,7 +36,7 @@ app.component('landingpage', {
         </div>
     </section>
     <section class="container-lg" id="package">
-        <div class="row w-100 h-100" id="card-frame" @click="handlelogwindow()">
+        <div class="row w-100 h-100" id="card-frame" @click="changeRoute('package')">
             <div class="col-lg-4 col-12" id="animation-container">
                 <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_Jos3jH.json" background="transparent" speed="1" loop autoplay></lottie-player>
             </div>
@@ -54,6 +54,9 @@ app.component('landingpage', {
     methods: {
         handlelogwindow(){
             return this.$emit('handlelogwindow')
+        },
+        changeRoute(route){
+            this.$emit('changeroute', route)
         }
     }
 })
