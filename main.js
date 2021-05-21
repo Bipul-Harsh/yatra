@@ -15,7 +15,8 @@ const app = Vue.createApp({
     },
     methods: {
         handlelogwindow(){
-            this.logwindowShow = this.logwindowShow?false:true;
+            if(this.authUser.length == 0 || this.logwindowShow)
+                this.logwindowShow = this.logwindowShow?false:true;
         },
         addUser(userProfile){
             this.authUser.push(userProfile);
