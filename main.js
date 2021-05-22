@@ -5,6 +5,11 @@ const app = Vue.createApp({
             currUser: 0,
             logwindowShow: false,
             route: 'landing',
+            navItems: [
+                {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
+                {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
+                {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg", route: "package"}
+            ]
         }
     },
     methods: {
@@ -31,6 +36,9 @@ const app = Vue.createApp({
                 return this.authUser[this.currUser].checkoutItems
             else
                 return []
+        },
+        navItems(){
+            return this.navItems
         }
     }
 })

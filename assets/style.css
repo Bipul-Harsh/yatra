@@ -89,6 +89,9 @@ section{
     #navButton:hover{
         background-color: rgba(0, 0, 0, 0.09)
     }
+    #copy{
+        width: auto;
+    }
 }
 .first{
     margin-top: 6rem
@@ -105,4 +108,15 @@ section{
 #package{
     background-image: url('/assets/images/package_background.png');
 }
-/* flight */
+.back-to-top{
+    right: 0;
+}
+.foot-link{
+    color: #5f6368
+}
+.foot-link:hover{
+    color: #202124
+}
+.foot-link-active{
+    color: #202124
+}

@@ -15,6 +15,10 @@ app.component('navbar', {
         route:{
             type:String,
             requried:true
+        },
+        navitems:{
+            type:Array,
+            required:true
         }
     },
     template:
@@ -68,15 +72,10 @@ app.component('navbar', {
     </header>`,
     data(){
         return{
-            navItems: [
-                {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
-                {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
-                {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg", route: "package"}
-            ],
             authUser:this.authuser,
             checkoutItems:this.checkoutitems,
             currUser:this.curruser,
-            route:this.route
+            navItems:this.navitems
         }
     },
     methods: {

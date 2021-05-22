@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body id="app">
-    <navbar :authuser="authUser" :curruser="currUser" :checkoutitems="checkoutItems" :route="route" @handle-logwindow="handlelogwindow()" @signout="signout()" @changeroute="changeRoute"></navbar>
+    <navbar :navitems="navItems" :authuser="authUser" :curruser="currUser" :checkoutitems="checkoutItems" :route="route" @handle-logwindow="handlelogwindow()" @signout="signout()" @changeroute="changeRoute"></navbar>
 
     <!-- log window -->
     <div class="container-fluid w-100 position-fixed d-flex p-2" id="logpanel" :class="[logwindowShow ? 'd-flex' : 'd-none']">
@@ -44,16 +44,8 @@
     <!-- landing page -->
     <landingpage v-if="route=='landing'" @handlelogwindow="handlelogwindow()" @changeroute="changeRoute"></landingpage>
 
-    <footer class="position-relative">
-        <nav class="container">
-            <div class="row d-flex justify-content-end">
-                <a href="#" class="nav-link">
-                    Back to top <img src="/assets/images/back_to_top.png" width="24" height="24" alt="">
-                </a>
-            </div>
-        </nav>
-    </footer>
-    
+    <div class="first"></div>
+    <footernav :navitems="navItems" :route="route" @changeroute="changeRoute"></footernav>    
 
 
     <!-- componenets call -->
@@ -61,6 +53,7 @@
     <script src="/components/navbar.js"></script>
     <script src="/components/logwindow.js"></script>
     <script src="/components/landingpage.js"></script>
+    <script src="/components/footernav.js"></script>
     <script>
         const mountedApp = app.mount("#app")
     </script>
