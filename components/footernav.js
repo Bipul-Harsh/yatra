@@ -12,7 +12,7 @@ app.component('footernav',{
     template:
     /*html*/
     `
-    <footer class="position-relative">
+    <footer class="mt-4">
         <nav class="container-lg">
             <div class="row d-flex justify-content-end">
                 <a href="#" class="nav-link w-auto" id="back-to-top">
