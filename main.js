@@ -9,7 +9,22 @@ const app = Vue.createApp({
                 {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
                 {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
                 {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg", route: "package"}
-            ]
+            ],
+            cart:[],
+            flights:[
+                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'SG-8191/3233', departtime:'06:15', departstn:'New Delhi', arrivetime:'11:05', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:123,booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6E-2331/581', departtime:'07:10', departstn:'New Delhi', arrivetime:'13:55', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:24, booked:false},
+                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'I5-926/1322', departtime:'09:15', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Goa', fare:4008, date:'21-Jun-2021', avail:45, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'G8-368/353', departtime:'12:15', departstn:'Mumbai', arrivetime:'19:45', arrivestn:'Delhi', fare:4435, date:'27-May-2021', avail:56, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6T-2451/551', departtime:'09:10', departstn:'Chandigarh', arrivetime:'11:55', arrivestn:'Delhi', fare:3002, date:'25-Jun-2021', avail:133, booked:false},
+                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-326/5622', departtime:'13:15', departstn:'New Delhi', arrivetime:'15:35', arrivestn:'Mumbai', fare:5008, date:'12-May-2021', avail:165, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'H5-234/433', departtime:'11:15', departstn:'Mumbai', arrivetime:'17:45', arrivestn:'Chandigarh', fare:3556, date:'02-Jun-2021', avail:34, booked:false},
+                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'MK-U1T1/2945', departtime:'12:00', departstn:'New Delhi', arrivetime:'03:10', arrivestn:'Patna', fare:6000, date:'30-Jun-2021', avail:56, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'7Y-2367/581', departtime:'23:07', departstn:'Chandigarh', arrivetime:'00:55', arrivestn:'Agra', fare:2000, date:'14-May-2021', avail:56, booked:false},
+                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-926/1722', departtime:'12:30', departstn:'Srinagar', arrivetime:'16:05', arrivestn:'Mumbai', fare:5302, date:'27-Jun-2021', avail:74, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
+            ],
         }
     },
     methods: {
@@ -28,6 +43,10 @@ const app = Vue.createApp({
         },
         changeRoute(route){
             this.route = route
+        },
+        checkoutflight(ind){
+            this.checkoutItems.push(this.flights[ind]);
+            this.flights[ind].booked=true;
         }
     },
     computed: {
@@ -35,10 +54,7 @@ const app = Vue.createApp({
             if(this.currUser.length > 0)
                 return this.authUser[this.currUser].checkoutItems
             else
-                return []
-        },
-        navItems(){
-            return this.navItems
+                return this.cart
         }
     }
 })

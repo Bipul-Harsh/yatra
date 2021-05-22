@@ -8,6 +8,9 @@ h1{
     font-family: 'Comfortaa', cursive;
     text-shadow: -2px 2px rgb(128 128 128 / 50%);
 }
+.heading{
+    font-family: 'Comfortaa', cursive;
+}
 .a{
     cursor: pointer;
 }
@@ -119,4 +122,24 @@ section{
 }
 .foot-link-active{
     color: #202124
+}
+.tile-shadow{
+    box-shadow: 0 0.1rem 0.2rem rgba(0,0,0,0.4)
+}
+.blue-button{
+    border: 2px solid #337ab7;
+    color: #337ab7
+}
+.blue-button:hover{
+    border: 2px solid #23527c;
+    color: #23527c;
+    text-align: center
+}
+.gray-button{
+    border: 2px solid #8a8a8a;
+    color: #8a8a8a;
+    text-align: center
+}
+.gray-tab{
+    background-color: #00000014
 }
