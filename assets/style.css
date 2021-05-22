@@ -23,8 +23,13 @@ h1{
     width: 90%;
     background-color: white;
 }
+.selected{
+    border-bottom: 1px solid #1a73e8
+}
+#nav-panel{
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.2);
+}
 #navButton:hover{
-    background-color: rgba(0, 0, 0, 0.09);
     border-bottom: 1px solid rgba(0, 0, 0, 0.562);
 }
 section{
@@ -81,9 +86,14 @@ section{
     #card-text{
         font-size: 1.5rem
     }
+    #navButton:hover{
+        background-color: rgba(0, 0, 0, 0.09)
+    }
+}
+.first{
+    margin-top: 6rem
 }
 #intro{
-    margin-top: 6rem;
     background-image: url('/assets/images/explore.webp');
 }
 #flight{
@@ -95,3 +105,4 @@ section{
 #package{
     background-image: url('/assets/images/package_background.png');
 }
+/* flight */

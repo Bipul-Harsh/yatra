@@ -11,12 +11,16 @@ app.component('navbar', {
         checkoutitems:{
             type:Array,
             required:true
+        },
+        route:{
+            type:String,
+            requried:true
         }
     },
     template:
     /*html*/
     `<header class="position-relative">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid shadow-sm p-0 px-3">
+        <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid p-0 px-3" id="nav-panel">
             <div class="navbar-brand px-lg-5">
                 <span href="/" class="navbar-brand a" @click="changeRoute('landing')">
                     <img src="/assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
@@ -28,8 +32,8 @@ app.component('navbar', {
             </button>
             <div class="collapse navbar-collapse justify-content-lg-start" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li v-for="navItem in navItems" class="nav-item active">
-                        <button href="#" class="nav-link active px-3 rounded btn btn-default mt-1 w-100 text-start" id="navButton" @click="changeRoute(navItem.route)">
+                    <li v-for="navItem in navItems" class="nav-item" :class="{active: navItem.route==route}">
+                        <button class="nav-link px-3 rounded btn btn-default mt-1 w-100 text-start" :class="{'active selected': navItem.route==route}" id="navButton" @click="changeRoute(navItem.route)">
                             <img :src="navItem.icon" :alt="navItem.alt" width="24" height="24">
                             <h6 class="d-inline d-lg-block p-3 p-lg-0">{{navItem.name}}</h6>
                         </button>
@@ -71,7 +75,8 @@ app.component('navbar', {
             ],
             authUser:this.authuser,
             checkoutItems:this.checkoutitems,
-            currUser:this.curruser
+            currUser:this.curruser,
+            route:this.route
         }
     },
     methods: {

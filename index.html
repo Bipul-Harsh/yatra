@@ -31,7 +31,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 </head>
 <body id="app">
-    <navbar :authuser="authUser" :curruser="currUser" :checkoutitems="checkoutItems" @handle-logwindow="handlelogwindow()" @signout="signout()" @changeroute="changeRoute"></navbar>
+    <navbar :authuser="authUser" :curruser="currUser" :checkoutitems="checkoutItems" :route="route" @handle-logwindow="handlelogwindow()" @signout="signout()" @changeroute="changeRoute"></navbar>
 
     <!-- log window -->
     <div class="container-fluid w-100 position-fixed d-flex p-2" id="logpanel" :class="[logwindowShow ? 'd-flex' : 'd-none']">

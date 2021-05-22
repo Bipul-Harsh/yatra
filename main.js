@@ -4,7 +4,7 @@ const app = Vue.createApp({
             authUser: [],
             currUser: 0,
             logwindowShow: false,
-            route: 'landing',
+            route: 'flight',
         }
     },
     methods: {

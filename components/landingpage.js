@@ -1,7 +1,7 @@
 app.component('landingpage', {
     template:
     /*html*/
-    `<section class="container-lg" id="intro">
+    `<section class="container-lg first" id="intro">
         <div class="row w-100 h-100" id="card-frame" @click="handlelogwindow()">
             <div class="col-lg-4 col-12" id="animation-container">
                 <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_WAMQ5G.json"  background="transparent" speed="1" loop  autoplay></lottie-player>
