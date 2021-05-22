@@ -64,7 +64,7 @@ app.component('navbar', {
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <button type="button" class="btn btn-default position-relative mt-1"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">+{{checkoutItems.length}}</span></button>
+                        <button type="button" class="btn btn-default position-relative mt-1" @click="changeRoute('cart')"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary">+{{checkoutItems.length}}</span></button>
                     </li>
                 </ul>
             </div>
