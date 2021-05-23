@@ -21,8 +21,8 @@ app.component('footernav',{
             </div>
             <hr>
             <div class="row d-flex nav-link">
-                <span class="w-auto a foot-link" @click="changeRoute('landing')" :class="{'foot-link-active':route=='landing'}">Home</span>
-                <span v-for="navItem in navItems" class="w-auto a foot-link" @click="changeRoute(navItem.route)" :class="{'foot-link-active':route==navItem.route}">{{navItem.name}}</span>
+                <a href="#" class="w-auto foot-link" @click="changeRoute('landing')" :class="{'foot-link-active':route=='landing'}">Home</a>
+                <a href="#" v-for="navItem in navItems" class="w-auto foot-link" @click="changeRoute(navItem.route)" :class="{'foot-link-active':route==navItem.route}">{{navItem.name}}</a>
             </div>
             <div class="row d-flex justify-content-center">
                 <a href="https://github.com/Bipul-Harsh/yatra" class="a nav-link foot-link w-auto" target="_blank"> <img src="/assets/images/github.svg" height="24" width="24" alt="github icon"> You can check its Source Code here</a>

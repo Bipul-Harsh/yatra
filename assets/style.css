@@ -95,6 +95,12 @@ section{
     #copy{
         width: auto;
     }
+    .responsive-padding{
+        padding: 0.2rem !important
+    }
+    .responsive-font{
+        font-size: 0.8rem
+    }
 }
 .first{
     margin-top: 6rem
@@ -115,7 +121,8 @@ section{
     right: 0;
 }
 .foot-link{
-    color: #5f6368
+    color: #5f6368;
+    text-decoration: none
 }
 .foot-link:hover{
     color: #202124
