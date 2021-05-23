@@ -13,7 +13,9 @@ app.component('cart',{
         <div v-if="checkoutItems.length==0" class="d-flex flex-column align-items-center justify-content-center h-100 shadow">
             <h2>Your cart is Empty!</h2>
         </div>
-        <div v-else></div>
+        <div v-else>
+            
+        </div>
     </div>
     `,
     data(){

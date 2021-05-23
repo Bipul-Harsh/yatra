@@ -25,6 +25,22 @@ const app = Vue.createApp({
                 {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
             ],
+            locations:[
+                {location:'New Delhi',image:'/assets/images/delhi.jpg',hotels:[
+                    {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'/assets/images/holiday-inn-new-delhi.jpg',booked:false},
+                    {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'/assets/images/roseate-house-exterior.jpg',booked:false},
+                    {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"/assets/images/radisson.jpg",booked:false}
+                ]},
+                {location:'Goa',image:'/assets/images/goa.jpg',hotels:[
+                    {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'/assets/images/holiday-inn-goa.jpg',booked:false},
+                    {hotel:'Royal Orchid Beach Resort & Spa, Goa',address:'Uttorda Beach Salcette, Utorda 403713 India',fare:6271,facilities:['Free WiFi, Free Parking, Taking safety measures'],image:'/assets/images/royal-orchid-beach-resort.jpg',booked:false},
+                    {hotel:'Sterling Goa- Varca',address:'605/D Pedda - Colva Rd Varca, Fatrade, Salcette, Varca 403721 India',fare:5645,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/sterling-goa-varca.jpg',booked:false}
+                ]},
+                {location:"Mumbai",image:'/assets/images/mumbai.jpg',hotels:[
+                    {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false},
+                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:2254,facilities:['Free Parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false}
+                ]}
+            ]
         }
     },
     methods: {
@@ -38,15 +54,26 @@ const app = Vue.createApp({
         signout(){
             if(confirm("Are you sure to log out?")){
                 this.authUser.pop()
-                alert("You are sucessfully logged out")
+                alert("You are sucessfully logged out");
             }
         },
         changeRoute(route){
             this.route = route
         },
         checkoutflight(ind){
-            this.checkoutItems.push(this.flights[ind]);
+            let flight = this.flights[ind];
+            flight['type'] = 'flight';
+            this.checkoutItems.push(flight);
             this.flights[ind].booked=true;
+        },
+        checkouthotel(locind,hotelind){
+            console.log(locind,hotelind);
+            var hotel = this.locations[locind].hotels[hotelind];
+            hotel['location']=this.locations[locind].location;
+            hotel['locimage']=this.locations[locind].image;
+            hotel['type']='hotel';
+            this.checkoutItems.push(hotel);
+            this.locations[locind].hotels[hotelind].booked=true;
         }
     },
     computed: {

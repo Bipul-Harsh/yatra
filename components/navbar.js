@@ -26,10 +26,10 @@ app.component('navbar', {
     `<header class="position-relative">
         <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid p-0 px-3" id="nav-panel">
             <div class="navbar-brand px-lg-5">
-                <span href="/" class="navbar-brand a" @click="changeRoute('landing')">
+                <a href="#" class="navbar-brand a" @click="changeRoute('landing')">
                     <img src="/assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
                     <h1 class="display-6 d-inline-block mx-2">Yatra</h1>
-                </span>
+                </a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,10 +37,10 @@ app.component('navbar', {
             <div class="collapse navbar-collapse justify-content-lg-start" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li v-for="navItem in navItems" class="nav-item" :class="{active: navItem.route==route}">
-                        <button class="nav-link px-3 rounded btn btn-default mt-1 w-100 text-start" :class="{'active selected': navItem.route==route}" id="navButton" @click="changeRoute(navItem.route)">
+                        <a href="#" class="nav-link px-3 rounded btn btn-default mt-1 w-100 text-start" :class="{'active selected': navItem.route==route}" id="navButton" @click="changeRoute(navItem.route)">
                             <img :src="navItem.icon" :alt="navItem.alt" width="24" height="24">
                             <h6 class="d-inline d-lg-block p-3 p-lg-0">{{navItem.name}}</h6>
-                        </button>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -64,7 +64,7 @@ app.component('navbar', {
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <button type="button" class="btn btn-default position-relative mt-1" @click="changeRoute('cart')"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary mt-2">+{{checkoutItems.length}}</span></button>
+                        <a href="#" type="button" class="btn btn-default position-relative mt-1" @click="changeRoute('cart')"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary mt-2">+{{checkoutItems.length}}</span></a>
                     </li>
                 </ul>
             </div>

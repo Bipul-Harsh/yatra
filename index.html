@@ -47,11 +47,14 @@
     </div>
 
     <div class="first"></div>
-    <!-- landing page -->
     <landingpage v-if="route=='landing'" @handlelogwindow="handlelogwindow()" @changeroute="changeRoute"></landingpage>
     <cart v-else-if="route=='cart'" :checkoutitems="checkoutItems"></cart>
     <flight :flights="flights" v-else-if="route=='flight'" @checkoutflight="checkoutflight"></flight>
+    <hotel v-else-if="route=='hotel'" :locations="locations" @checkouthotel="checkouthotel"></hotel>
 
+    
+    
+    
     <!-- footer -->
     <footernav :navitems="navItems" :route="route" @changeroute="changeRoute"></footernav>    
 
@@ -64,6 +67,7 @@
     <script src="/components/footernav.js"></script>
     <script src="/components/cart.js"></script>
     <script src="/components/flight.js"></script>
+    <script src="/components/hotels.js"></script>
     <script>
         const mountedApp = app.mount("#app")
     </script>
