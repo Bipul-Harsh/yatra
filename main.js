@@ -4,7 +4,7 @@ const app = Vue.createApp({
             authUser: [],
             currUser: 0,
             logwindowShow: false,
-            route: 'flight',
+            route: 'landing',
             navItems: [
                 {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
                 {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
