@@ -24,6 +24,9 @@ const app = Vue.createApp({
                 {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-926/1722', departtime:'12:30', departstn:'Srinagar', arrivetime:'16:05', arrivestn:'Mumbai', fare:5302, date:'27-Jun-2021', avail:74, booked:false},
                 {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'9Y-2247/671', departtime:'10:00', departstn:'Chandigarh', arrivetime:'12:20', arrivestn:'Mumbai', fare:3456, date:'01-June-2021', avail:34, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'U7-368/903', departtime:'06:25', departstn:'Mumbai', arrivetime:'09:45', arrivestn:'Chandigarh', fare:2935, date:'27-May-2021', avail:66, booked:false},
+                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'K9-926/1412', departtime:'10:30', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Chandigarh', fare:2008, date:'30-Jun-2021', avail:25, booked:false},
             ],
             locations:[
                 {location:'New Delhi',image:'/assets/images/delhi.jpg',hotels:[
@@ -40,6 +43,10 @@ const app = Vue.createApp({
                     {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false},
                     {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:2254,facilities:['Free Parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false}
                 ]}
+            ],
+            packages:[
+                {from:'Chandigarh',to:'Mumbai',departflight:12,arriveflight:13,stay:[2,0]},
+                {from:'Chandigarh',to:'Delhi',departflight:4,arriveflight:12,stay:[0,1]}
             ]
         }
     },
