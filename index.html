@@ -51,7 +51,8 @@
     <cart v-else-if="route=='cart'" :checkoutitems="checkoutItems"></cart>
     <flight :flights="flights" v-else-if="route=='flight'" @checkoutflight="checkoutflight"></flight>
     <hotel v-else-if="route=='hotel'" :locations="locations" @checkouthotel="checkouthotel"></hotel>
-    <!-- <h3 class="text-center heading display-6 my-5">Book hotel of your choice</h3> -->
+    <package v-else-if="route=='package'" :flights="flights" :locations="locations" :packages="packages" @checkoutpackage="checkoutpackage"></package>
+
     
     
     
@@ -68,6 +69,7 @@
     <script src="/components/cart.js"></script>
     <script src="/components/flight.js"></script>
     <script src="/components/hotels.js"></script>
+    <script src="/components/package.js"></script>
     <script>
         const mountedApp = app.mount("#app")
     </script>

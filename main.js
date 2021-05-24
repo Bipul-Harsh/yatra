@@ -15,18 +15,20 @@ const app = Vue.createApp({
                 {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'SG-8191/3233', departtime:'06:15', departstn:'New Delhi', arrivetime:'11:05', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:123,booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6E-2331/581', departtime:'07:10', departstn:'New Delhi', arrivetime:'13:55', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:24, booked:false},
                 {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'I5-926/1322', departtime:'09:15', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Goa', fare:4008, date:'21-Jun-2021', avail:45, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'G8-368/353', departtime:'12:15', departstn:'Mumbai', arrivetime:'19:45', arrivestn:'Delhi', fare:4435, date:'27-May-2021', avail:56, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6T-2451/551', departtime:'09:10', departstn:'Chandigarh', arrivetime:'11:55', arrivestn:'Delhi', fare:3002, date:'25-Jun-2021', avail:133, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'G8-368/353', departtime:'12:15', departstn:'Mumbai', arrivetime:'19:45', arrivestn:'New Delhi', fare:4435, date:'27-May-2021', avail:56, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6T-2451/551', departtime:'09:10', departstn:'Chandigarh', arrivetime:'11:55', arrivestn:'New Delhi', fare:3002, date:'25-Jun-2021', avail:133, booked:false},
                 {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-326/5622', departtime:'13:15', departstn:'New Delhi', arrivetime:'15:35', arrivestn:'Mumbai', fare:5008, date:'12-May-2021', avail:165, booked:false},
                 {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'H5-234/433', departtime:'11:15', departstn:'Mumbai', arrivetime:'17:45', arrivestn:'Chandigarh', fare:3556, date:'02-Jun-2021', avail:34, booked:false},
                 {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'MK-U1T1/2945', departtime:'12:00', departstn:'New Delhi', arrivetime:'13:10', arrivestn:'Patna', fare:6000, date:'30-Jun-2021', avail:56, booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'7Y-2367/581', departtime:'23:07', departstn:'Chandigarh', arrivetime:'00:55', arrivestn:'Agra', fare:2000, date:'14-May-2021', avail:56, booked:false},
                 {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-926/1722', departtime:'12:30', departstn:'Srinagar', arrivetime:'16:05', arrivestn:'Mumbai', fare:5302, date:'27-Jun-2021', avail:74, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
+                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'New Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
                 {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'9Y-2247/671', departtime:'10:00', departstn:'Chandigarh', arrivetime:'12:20', arrivestn:'Mumbai', fare:3456, date:'01-June-2021', avail:34, booked:false},
                 {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'U7-368/903', departtime:'06:25', departstn:'Mumbai', arrivetime:'09:45', arrivestn:'Chandigarh', fare:2935, date:'27-May-2021', avail:66, booked:false},
                 {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'K9-926/1412', departtime:'10:30', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Chandigarh', fare:2008, date:'30-Jun-2021', avail:25, booked:false},
+                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'UH-L1T2/2945', departtime:'12:00', departstn:'Mumbai', arrivetime:'13:20', arrivestn:'Goa', fare:2199, date:'12-Jun-2021', avail:23, booked:false},
+                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'7G-2567/9021', departtime:'06:00', departstn:'Goa', arrivetime:'07:35', arrivestn:'Mumbai', fare:3109, date:'25-May-2021', avail:14, booked:false},
             ],
             locations:[
                 {location:'New Delhi',image:'/assets/images/delhi.jpg',hotels:[
@@ -41,12 +43,13 @@ const app = Vue.createApp({
                 ]},
                 {location:"Mumbai",image:'/assets/images/mumbai.jpg',hotels:[
                     {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false},
-                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:2254,facilities:['Free Parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false}
+                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:3719,facilities:['Free parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false}
                 ]}
             ],
             packages:[
-                {from:'Chandigarh',to:'Mumbai',departflight:12,arriveflight:13,stay:[2,0]},
-                {from:'Chandigarh',to:'Delhi',departflight:4,arriveflight:12,stay:[0,1]}
+                {departflight:5,arriveflight:3,from:0,to:2,booked:false},
+                {departflight:15,arriveflight:16,from:2,to:1,booked:false},
+                {departflight:3,arriveflight:5,from:2,to:0,booked:false}
             ]
         }
     },
@@ -74,13 +77,19 @@ const app = Vue.createApp({
             this.flights[ind].booked=true;
         },
         checkouthotel(locind,hotelind){
-            console.log(locind,hotelind);
             var hotel = this.locations[locind].hotels[hotelind];
             hotel['location']=this.locations[locind].location;
             hotel['locimage']=this.locations[locind].image;
             hotel['type']='hotel';
             this.checkoutItems.push(hotel);
             this.locations[locind].hotels[hotelind].booked=true;
+        },
+        checkoutpackage(ind, hotelsind){
+            var pkg = this.packages[ind];
+            pkg['type']='package';
+            pkg['totalfare']=Math.round((this.flights[pkg.departflight].fare + this.flights[pkg.arriveflight].fare + this.locations[pkg.to].hotels[0].fare)*0.85);
+            pkg['booked']=true;
+            this.checkoutItems.push(pkg);
         }
     },
     computed: {

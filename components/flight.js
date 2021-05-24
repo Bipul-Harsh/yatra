@@ -8,7 +8,7 @@ app.component('flight',{
     template:
     /*html*/
     `
-    <h3 class="text-center heading my-5">Available Flights</h3>
+    <h3 class="text-center heading display-6 my-5">Available Flights</h3>
     <div class="container-lg responsive-font">
         <div class="row p-3 rounded-3 responsive-padding">
             <div class="col-2 d-flex justify-content-center"><strong>Airline</strong></div>
@@ -32,7 +32,7 @@ app.component('flight',{
             </div>
             <div class="col-2 d-flex flex-column text-center px-0">
                 <span class="w-100"><strong>{{flight.arrivetime}}</strong></span>
-                <span class="2-100 text-break">{{flight.arrivestn}}</span>
+                <span class=" text-break">{{flight.arrivestn}}</span>
             </div>
             <div class="col-2 d-flex text-center align-items-center px-0">
                 <span class="w-100"><strong>&#8377;{{flight.fare}}</strong></span>
