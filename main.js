@@ -142,7 +142,6 @@ const app = Vue.createApp({
             for(var i=0; i<this.cart.length; i++){
                 totalamount += this.cart[i].fare*this.cart[i].qty;
             }
-            console.log(totalamount)
             return totalamount;
         }
     }
