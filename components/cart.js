@@ -283,7 +283,7 @@ app.component('cart',{
     },
     methods:{
         removeitem(index){
-            this.$emit(removeitem,index)
+            this.$emit('removeitem',index)
         },
         increaseqty(ind){
             this.$emit('increaseqty',ind)
