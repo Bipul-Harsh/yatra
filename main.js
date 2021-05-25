@@ -4,7 +4,7 @@ const app = Vue.createApp({
             authUser: [],
             currUser: 0,
             logwindowShow: false,
-            route: 'landing',
+            route: 'cart',
             navItems: [
                 {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
                 {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
@@ -32,18 +32,18 @@ const app = Vue.createApp({
             ],
             locations:[
                 {location:'New Delhi',image:'/assets/images/delhi.jpg',hotels:[
-                    {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'/assets/images/holiday-inn-new-delhi.jpg',booked:false},
-                    {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'/assets/images/roseate-house-exterior.jpg',booked:false},
-                    {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"/assets/images/radisson.jpg",booked:false}
+                    {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'/assets/images/holiday-inn-new-delhi.jpg',booked:false,avail:204},
+                    {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'/assets/images/roseate-house-exterior.jpg',booked:false,avail:312},
+                    {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"/assets/images/radisson.jpg",booked:false,avail:133}
                 ]},
                 {location:'Goa',image:'/assets/images/goa.jpg',hotels:[
-                    {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'/assets/images/holiday-inn-goa.jpg',booked:false},
-                    {hotel:'Royal Orchid Beach Resort & Spa, Goa',address:'Uttorda Beach Salcette, Utorda 403713 India',fare:6271,facilities:['Free WiFi, Free Parking, Taking safety measures'],image:'/assets/images/royal-orchid-beach-resort.jpg',booked:false},
-                    {hotel:'Sterling Goa- Varca',address:'605/D Pedda - Colva Rd Varca, Fatrade, Salcette, Varca 403721 India',fare:5645,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/sterling-goa-varca.jpg',booked:false}
+                    {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'/assets/images/holiday-inn-goa.jpg',booked:false,avail:167},
+                    {hotel:'Royal Orchid Beach Resort & Spa, Goa',address:'Uttorda Beach Salcette, Utorda 403713 India',fare:6271,facilities:['Free WiFi, Free Parking, Taking safety measures'],image:'/assets/images/royal-orchid-beach-resort.jpg',booked:false,avail:145},
+                    {hotel:'Sterling Goa- Varca',address:'605/D Pedda - Colva Rd Varca, Fatrade, Salcette, Varca 403721 India',fare:5645,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/sterling-goa-varca.jpg',booked:false,avail:298}
                 ]},
                 {location:"Mumbai",image:'/assets/images/mumbai.jpg',hotels:[
-                    {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false},
-                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:3719,facilities:['Free parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false}
+                    {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false,avail:376},
+                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:3719,facilities:['Free parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false,avail:267}
                 ]}
             ],
             packages:[
@@ -73,6 +73,7 @@ const app = Vue.createApp({
         checkoutflight(ind){
             let flight = this.flights[ind];
             flight['type'] = 'flight';
+            flight['qty']=1;
             this.checkoutItems.push(flight);
             this.flights[ind].booked=true;
         },
@@ -81,16 +82,53 @@ const app = Vue.createApp({
             hotel['location']=this.locations[locind].location;
             hotel['locimage']=this.locations[locind].image;
             hotel['type']='hotel';
+            hotel['person']=1;
+            hotel['day']=1;
+            hotel['qty']=1;
             this.checkoutItems.push(hotel);
             this.locations[locind].hotels[hotelind].booked=true;
         },
         checkoutpackage(ind, hotelsind){
             var pkg = this.packages[ind];
             pkg['type']='package';
-            pkg['totalfare']=Math.round((this.flights[pkg.departflight].fare + this.flights[pkg.arriveflight].fare + this.locations[pkg.to].hotels[0].fare)*0.85);
+            pkg['fare']=Math.round((this.flights[pkg.departflight].fare + this.flights[pkg.arriveflight].fare + this.locations[pkg.to].hotels[0].fare)*0.85);
             pkg['booked']=true;
+            pkg['person']=1;
+            pkg['day']=1;
+            pkg['qty']=1;
+            pkg['hotel']=0;
             this.checkoutItems.push(pkg);
-        }
+        },
+        removeitem(index){
+            this.checkoutItems[index].booked = false;
+            this.checkoutItems.splice(index,1);
+        },
+        increaseqty(ind){
+            this.checkoutItems[ind].qty+=1;
+        },
+        reduceqty(ind){
+            this.checkoutItems[ind].qty-=1;
+        },
+        personincrease(ind){
+            this.checkoutItems[ind].person+=1;
+            this.checkoutItems[ind].qty=this.checkoutItems[ind].person*this.checkoutItems[ind].day;
+        },
+        persondecrease(ind){
+            this.checkoutItems[ind].person-=1;
+            this.checkoutItems[ind].qty=this.checkoutItems[ind].person*this.checkoutItems[ind].day;
+        },
+        dayincrease(ind){
+            this.checkoutItems[ind].day+=1;
+            this.checkoutItems[ind].qty=this.checkoutItems[ind].person*this.checkoutItems[ind].day;
+        },
+        daydecrease(ind){
+            this.checkoutItems[ind].day-=1;
+            this.checkoutItems[ind].qty=this.checkoutItems[ind].person*this.checkoutItems[ind].day;
+        },
+        makeorder(){
+            alert("Note: \nThis is a demo website, all operations are for demonstration purposes only.")
+        },
+        
     },
     computed: {
         checkoutItems(){
@@ -98,6 +136,14 @@ const app = Vue.createApp({
                 return this.authUser[this.currUser].checkoutItems
             else
                 return this.cart
+        },
+        grandtotal(){
+            var totalamount = 0;
+            for(var i=0; i<this.cart.length; i++){
+                totalamount += this.cart[i].fare*this.cart[i].qty;
+            }
+            console.log(totalamount)
+            return totalamount;
         }
     }
 })

@@ -48,13 +48,10 @@
 
     <div class="first"></div>
     <landingpage v-if="route=='landing'" @handlelogwindow="handlelogwindow()" @changeroute="changeRoute"></landingpage>
-    <cart v-else-if="route=='cart'" :checkoutitems="checkoutItems"></cart>
     <flight :flights="flights" v-else-if="route=='flight'" @checkoutflight="checkoutflight"></flight>
     <hotel v-else-if="route=='hotel'" :locations="locations" @checkouthotel="checkouthotel"></hotel>
     <package v-else-if="route=='package'" :flights="flights" :locations="locations" :packages="packages" @checkoutpackage="checkoutpackage"></package>
-
-    
-    
+    <cart v-else-if="route=='cart'" :cart="cart" :checkoutitems="checkoutItems" :flights="flights" :locations="locations" :packages="packages" :grandtotal="grandtotal" @removeitem="removeitem" @increaseqty="increaseqty" @reduceqty="reduceqty" @personincrease="personincrease" @persondecrease="persondecrease" @dayincrease="dayincrease" @daydecrease="daydecrease"></cart>
     
     <!-- footer -->
     <footernav :navitems="navItems" :route="route" @changeroute="changeRoute"></footernav>    
@@ -66,10 +63,10 @@
     <script src="/components/logwindow.js"></script>
     <script src="/components/landingpage.js"></script>
     <script src="/components/footernav.js"></script>
-    <script src="/components/cart.js"></script>
     <script src="/components/flight.js"></script>
     <script src="/components/hotels.js"></script>
     <script src="/components/package.js"></script>
+    <script src="/components/cart.js"></script>
     <script>
         const mountedApp = app.mount("#app")
     </script>

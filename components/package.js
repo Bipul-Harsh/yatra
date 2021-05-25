@@ -39,7 +39,7 @@ app.component('package',{
             <hr>
             <div class="row gx-0 container-lg mb-2">
                 <div class="col-12 col-lg-8 d-flex align-items-center justify-content-center responsive-font">
-                    <h5 class="mx-2 w">Starts at <span class="fs-6">(-<strong>15%</strong>)</h5>
+                    <h5 class="mx-2 w">Starts at <span class="fs-6">(-<strong>15%</strong>)</span></h5>
                     <h5 class="text-decoration-line-through me-2">&#8377;{{flights[package.departflight].fare + flights[package.arriveflight].fare + locations[package.to].hotels[0].fare}} </h5>
                     <h5 class="display-6"> = &#8377;{{Math.round((flights[package.departflight].fare + flights[package.arriveflight].fare + locations[package.to].hotels[0].fare)*0.85)}}</h5>
                 </div>
