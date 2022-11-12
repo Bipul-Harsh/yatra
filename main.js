@@ -6,9 +6,9 @@ const app = Vue.createApp({
             logwindowShow: false,
             route: 'landing',
             navItems: [
-                {name: "Flights", alt:"flight icon", icon: "/assets/images/flight.svg", route: "flight"},
-                {name: "Hotels", alt:"hotel icon", icon: "/assets/images/hotel.svg", route: "hotel"},
-                {name: "Packages", alt:"packages icon", icon: "/assets/images/package.svg", route: "package"}
+                {name: "Flights", alt:"flight icon", icon: "assets/images/flight.svg", route: "flight"},
+                {name: "Hotels", alt:"hotel icon", icon: "assets/images/hotel.svg", route: "hotel"},
+                {name: "Packages", alt:"packages icon", icon: "assets/images/package.svg", route: "package"}
             ],
             cart:[],
             flights:[
@@ -34,7 +34,7 @@ const app = Vue.createApp({
                 {location:'New Delhi',image:'assets/images/delhi.jpg',hotels:[
                     {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'assets/images/holiday-inn-new-delhi.jpg',booked:false,avail:204},
                     {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'assets/images/roseate-house-exterior.jpg',booked:false,avail:312},
-                    {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"/assets/images/radisson.jpg",booked:false,avail:133}
+                    {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"assets/images/radisson.jpg",booked:false,avail:133}
                 ]},
                 {location:'Goa',image:'assets/images/goa.jpg',hotels:[
                     {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'assets/images/holiday-inn-goa.jpg',booked:false,avail:167},
