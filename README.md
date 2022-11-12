@@ -9,7 +9,7 @@
 Created this static website from scratch with the help of Vue3 and Bootstrap5. Being open source, its Free to use and open for contribution. 
 
 ## Checkout Deployed Site
-[Link to deployed site](https://www.yatra.ga)
+[Link to deployed site](https://bipul-harsh.github.io/yatra/)
 
 ## Landing Page
 - Used lottie animations from [LottieFiles](https://lottiefiles.com)
