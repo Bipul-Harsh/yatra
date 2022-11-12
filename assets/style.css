@@ -106,16 +106,16 @@ section{
     margin-top: 6rem
 }
 #intro{
-    background-image: url('/assets/images/explore.webp');
+    background-image: url('assets/images/explore.webp');
 }
 #flight{
-    background-image: url('/assets/images/airport_terminal.webp')
+    background-image: url('assets/images/airport_terminal.webp')
 }
 #hotel{
-    background-image: url('/assets/images/hotel.webp');
+    background-image: url('assets/images/hotel.webp');
 }
 #package{
-    background-image: url('/assets/images/package_background.png');
+    background-image: url('assets/images/package_background.png');
 }
 .back-to-top{
     right: 0;
