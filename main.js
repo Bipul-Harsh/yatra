@@ -12,38 +12,38 @@ const app = Vue.createApp({
             ],
             cart:[],
             flights:[
-                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'SG-8191/3233', departtime:'06:15', departstn:'New Delhi', arrivetime:'11:05', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:123,booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6E-2331/581', departtime:'07:10', departstn:'New Delhi', arrivetime:'13:55', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:24, booked:false},
-                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'I5-926/1322', departtime:'09:15', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Goa', fare:4008, date:'21-Jun-2021', avail:45, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'G8-368/353', departtime:'12:15', departstn:'Mumbai', arrivetime:'19:45', arrivestn:'New Delhi', fare:4435, date:'27-May-2021', avail:56, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6T-2451/551', departtime:'09:10', departstn:'Chandigarh', arrivetime:'11:55', arrivestn:'New Delhi', fare:3002, date:'25-Jun-2021', avail:133, booked:false},
-                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-326/5622', departtime:'13:15', departstn:'New Delhi', arrivetime:'15:35', arrivestn:'Mumbai', fare:5008, date:'12-May-2021', avail:165, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'H5-234/433', departtime:'11:15', departstn:'Mumbai', arrivetime:'17:45', arrivestn:'Chandigarh', fare:3556, date:'02-Jun-2021', avail:34, booked:false},
-                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'MK-U1T1/2945', departtime:'12:00', departstn:'New Delhi', arrivetime:'13:10', arrivestn:'Patna', fare:6000, date:'30-Jun-2021', avail:56, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'7Y-2367/581', departtime:'23:07', departstn:'Chandigarh', arrivetime:'00:55', arrivestn:'Agra', fare:2000, date:'14-May-2021', avail:56, booked:false},
-                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'R5-926/1722', departtime:'12:30', departstn:'Srinagar', arrivetime:'16:05', arrivestn:'Mumbai', fare:5302, date:'27-Jun-2021', avail:74, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'New Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'9Y-2247/671', departtime:'10:00', departstn:'Chandigarh', arrivetime:'12:20', arrivestn:'Mumbai', fare:3456, date:'01-June-2021', avail:34, booked:false},
-                {airline:'Go Air', logo:'/assets/images/goair.png', flightno:'U7-368/903', departtime:'06:25', departstn:'Mumbai', arrivetime:'09:45', arrivestn:'Chandigarh', fare:2935, date:'27-May-2021', avail:66, booked:false},
-                {airline:'Air Asia', logo:'/assets/images/airasia.png', flightno:'K9-926/1412', departtime:'10:30', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Chandigarh', fare:2008, date:'30-Jun-2021', avail:25, booked:false},
-                {airline:'SpiceJet', logo:'/assets/images/spicejet.png', flightno:'UH-L1T2/2945', departtime:'12:00', departstn:'Mumbai', arrivetime:'13:20', arrivestn:'Goa', fare:2199, date:'12-Jun-2021', avail:23, booked:false},
-                {airline:'IndiGo', logo:'/assets/images/indigo.png', flightno:'7G-2567/9021', departtime:'06:00', departstn:'Goa', arrivetime:'07:35', arrivestn:'Mumbai', fare:3109, date:'25-May-2021', avail:14, booked:false},
+                {airline:'SpiceJet', logo:'assets/images/spicejet.png', flightno:'SG-8191/3233', departtime:'06:15', departstn:'New Delhi', arrivetime:'11:05', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:123,booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'6E-2331/581', departtime:'07:10', departstn:'New Delhi', arrivetime:'13:55', arrivestn:'Goa', fare:4008, date:'20-Jun-2021', avail:24, booked:false},
+                {airline:'Air Asia', logo:'assets/images/airasia.png', flightno:'I5-926/1322', departtime:'09:15', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Goa', fare:4008, date:'21-Jun-2021', avail:45, booked:false},
+                {airline:'Go Air', logo:'assets/images/goair.png', flightno:'G8-368/353', departtime:'12:15', departstn:'Mumbai', arrivetime:'19:45', arrivestn:'New Delhi', fare:4435, date:'27-May-2021', avail:56, booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'6T-2451/551', departtime:'09:10', departstn:'Chandigarh', arrivetime:'11:55', arrivestn:'New Delhi', fare:3002, date:'25-Jun-2021', avail:133, booked:false},
+                {airline:'Air Asia', logo:'assets/images/airasia.png', flightno:'R5-326/5622', departtime:'13:15', departstn:'New Delhi', arrivetime:'15:35', arrivestn:'Mumbai', fare:5008, date:'12-May-2021', avail:165, booked:false},
+                {airline:'Go Air', logo:'assets/images/goair.png', flightno:'H5-234/433', departtime:'11:15', departstn:'Mumbai', arrivetime:'17:45', arrivestn:'Chandigarh', fare:3556, date:'02-Jun-2021', avail:34, booked:false},
+                {airline:'SpiceJet', logo:'assets/images/spicejet.png', flightno:'MK-U1T1/2945', departtime:'12:00', departstn:'New Delhi', arrivetime:'13:10', arrivestn:'Patna', fare:6000, date:'30-Jun-2021', avail:56, booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'7Y-2367/581', departtime:'23:07', departstn:'Chandigarh', arrivetime:'00:55', arrivestn:'Agra', fare:2000, date:'14-May-2021', avail:56, booked:false},
+                {airline:'Air Asia', logo:'assets/images/airasia.png', flightno:'R5-926/1722', departtime:'12:30', departstn:'Srinagar', arrivetime:'16:05', arrivestn:'Mumbai', fare:5302, date:'27-Jun-2021', avail:74, booked:false},
+                {airline:'Go Air', logo:'assets/images/goair.png', flightno:'L8-999/003', departtime:'10:10', departstn:'Pune', arrivetime:'12:45', arrivestn:'New Delhi', fare:3515, date:'13-June-2021', avail:45, booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'6P-2671/581', departtime:'09:00', departstn:'Coimbatore', arrivetime:'13:55', arrivestn:'Chandigarh', fare:2389, date:'28-Jun-2021', avail:33, booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'9Y-2247/671', departtime:'10:00', departstn:'Chandigarh', arrivetime:'12:20', arrivestn:'Mumbai', fare:3456, date:'01-June-2021', avail:34, booked:false},
+                {airline:'Go Air', logo:'assets/images/goair.png', flightno:'U7-368/903', departtime:'06:25', departstn:'Mumbai', arrivetime:'09:45', arrivestn:'Chandigarh', fare:2935, date:'27-May-2021', avail:66, booked:false},
+                {airline:'Air Asia', logo:'assets/images/airasia.png', flightno:'K9-926/1412', departtime:'10:30', departstn:'New Delhi', arrivetime:'16:35', arrivestn:'Chandigarh', fare:2008, date:'30-Jun-2021', avail:25, booked:false},
+                {airline:'SpiceJet', logo:'assets/images/spicejet.png', flightno:'UH-L1T2/2945', departtime:'12:00', departstn:'Mumbai', arrivetime:'13:20', arrivestn:'Goa', fare:2199, date:'12-Jun-2021', avail:23, booked:false},
+                {airline:'IndiGo', logo:'assets/images/indigo.png', flightno:'7G-2567/9021', departtime:'06:00', departstn:'Goa', arrivetime:'07:35', arrivestn:'Mumbai', fare:3109, date:'25-May-2021', avail:14, booked:false},
             ],
             locations:[
-                {location:'New Delhi',image:'/assets/images/delhi.jpg',hotels:[
-                    {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'/assets/images/holiday-inn-new-delhi.jpg',booked:false,avail:204},
-                    {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'/assets/images/roseate-house-exterior.jpg',booked:false,avail:312},
+                {location:'New Delhi',image:'assets/images/delhi.jpg',hotels:[
+                    {hotel:'Holiday Inn',address:'Hospitality District Asset Area 12 Aerocity, New Delhi international Airport, New Delhi 110002 India',fare:2872,facilities:['Free WiFi','Free parking','Pool','Restaurant','Taking Safety Measures'],image:'assets/images/holiday-inn-new-delhi.jpg',booked:false,avail:204},
+                    {hotel:'Roseate House New Delhi',address:'Roseate House New Delhi',fare:4596,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:'assets/images/roseate-house-exterior.jpg',booked:false,avail:312},
                     {hotel:'Radisson Blu Plaza Delhi Airport',address:'National Highway 8, New Delhi 110017 India',fare:2351,facilities:['Free WiFi','Free parking','Taking Safety Measures'],image:"/assets/images/radisson.jpg",booked:false,avail:133}
                 ]},
-                {location:'Goa',image:'/assets/images/goa.jpg',hotels:[
-                    {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'/assets/images/holiday-inn-goa.jpg',booked:false,avail:167},
-                    {hotel:'Royal Orchid Beach Resort & Spa, Goa',address:'Uttorda Beach Salcette, Utorda 403713 India',fare:6271,facilities:['Free WiFi, Free Parking, Taking safety measures'],image:'/assets/images/royal-orchid-beach-resort.jpg',booked:false,avail:145},
-                    {hotel:'Sterling Goa- Varca',address:'605/D Pedda - Colva Rd Varca, Fatrade, Salcette, Varca 403721 India',fare:5645,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/sterling-goa-varca.jpg',booked:false,avail:298}
+                {location:'Goa',image:'assets/images/goa.jpg',hotels:[
+                    {hotel:'Holiday Inn Resort Goa',address:'Mobor Beach South Goa, Cavelossim 403731 India',fare:7669,facilities:['Free parking','Pool','Beach','Restaurant','Taking safety measure'],image:'assets/images/holiday-inn-goa.jpg',booked:false,avail:167},
+                    {hotel:'Royal Orchid Beach Resort & Spa, Goa',address:'Uttorda Beach Salcette, Utorda 403713 India',fare:6271,facilities:['Free WiFi, Free Parking, Taking safety measures'],image:'assets/images/royal-orchid-beach-resort.jpg',booked:false,avail:145},
+                    {hotel:'Sterling Goa- Varca',address:'605/D Pedda - Colva Rd Varca, Fatrade, Salcette, Varca 403721 India',fare:5645,facilities:['Free parking','Pool','Taking safety measures'],image:'assets/images/sterling-goa-varca.jpg',booked:false,avail:298}
                 ]},
-                {location:"Mumbai",image:'/assets/images/mumbai.jpg',hotels:[
-                    {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'/assets/images/itc-maratha-mumbai.jpg',booked:false,avail:376},
-                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:3719,facilities:['Free parking','Restaurant','Taking safety measures'],image:'/assets/images/goldfinch-mumbai.jpg',booked:false,avail:267}
+                {location:"Mumbai",image:'assets/images/mumbai.jpg',hotels:[
+                    {hotel:'ITC Maratha, Mumbai - a Luxury Collection Hotel',address:'Sahar Airport Road, Near International Airport Andheri, Mumbai 400099 India',fare:4360,facilities:['Free parking','Pool','Taking safety measures'],image:'assets/images/itc-maratha-mumbai.jpg',booked:false,avail:376},
+                    {hotel:'Goldfinch Mumbai',address:'21 Central Road MIDC, Andheri, Mumbai 400093 India',fare:3719,facilities:['Free parking','Restaurant','Taking safety measures'],image:'assets/images/goldfinch-mumbai.jpg',booked:false,avail:267}
                 ]}
             ],
             packages:[
