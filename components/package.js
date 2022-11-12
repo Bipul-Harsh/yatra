@@ -45,7 +45,7 @@ app.component('package',{
                 </div>
                 <div class="col-12 col-lg-4 d-flex align-items-center justify-content-center">
                     <div class="d-flex justify-content-center align-items-center rounded py-4 mx-1 container-fluid" :class="[!package.booked?'a blue-button': 'gray-button']" @click="checkoutpackage(index, 0)">
-                        Add to cart  <img v-if="package.booked" src="/assets/images/green_check.svg" alt="booked" width="20" height="20">
+                        Add to cart  <img v-if="package.booked" src="assets/images/green_check.svg" alt="booked" width="20" height="20">
                     </div>
                 </div>
             </div>

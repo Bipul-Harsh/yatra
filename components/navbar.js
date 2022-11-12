@@ -27,7 +27,7 @@ app.component('navbar', {
         <nav class="navbar navbar-light navbar-expand-lg fixed-top container-fluid p-0 px-3" id="nav-panel">
             <div class="navbar-brand px-lg-5">
                 <a href="#" class="navbar-brand a" @click="changeRoute('landing')">
-                    <img src="/assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
+                    <img src="assets/images/suitcases.svg" alt="logo" width="40" height="40" class="d-inline-block align-top">
                     <h1 class="display-6 d-inline-block mx-2">Yatra</h1>
                 </a>
             </div>
@@ -64,7 +64,7 @@ app.component('navbar', {
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a href="#" type="button" class="btn btn-default position-relative mt-1" @click="changeRoute('cart')"><img src="/assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary mt-2">+{{checkoutItems.length}}</span></a>
+                        <a href="#" type="button" class="btn btn-default position-relative mt-1" @click="changeRoute('cart')"><img src="assets/images/checkout.svg" alt="checkout icon" width="24" height="24"> <span v-show="checkoutItems.length > 0" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary mt-2">+{{checkoutItems.length}}</span></a>
                     </li>
                 </ul>
             </div>

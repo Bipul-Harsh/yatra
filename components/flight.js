@@ -41,7 +41,7 @@ app.component('flight',{
                 <span class="w-100">{{flight.avail}}</span>
             </div>
             <div class="col-3 d-flex justify-content-center align-items-center container-fluid rounded" :class="[!flight.booked?'a blue-button': 'gray-button']" @click="checkoutflight(index)">
-                Add to Cart  <img v-if="flight.booked" src="/assets/images/green_check.svg" alt="booked" width="20" height="20">
+                Add to Cart  <img v-if="flight.booked" src="assets/images/green_check.svg" alt="booked" width="20" height="20">
             </div>
         </div>
     </div>

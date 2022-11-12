@@ -32,7 +32,7 @@ app.component('hotel',{
                         <h5>Fare/night</h5>
                         <h5 class="display-6">&#8377;{{hotel.fare}}</h5>
                         <div class="d-flex justify-content-center align-items-center container-fluid rounded py-4" :class="[!hotel.booked?'a blue-button': 'gray-button']" @click="checkouthotel(locind,hotelind)">
-                            Add to cart  <img v-if="hotel.booked" src="/assets/images/green_check.svg" alt="booked" width="20" height="20">
+                            Add to cart  <img v-if="hotel.booked" src="assets/images/green_check.svg" alt="booked" width="20" height="20">
                         </div>
                     </div>
                 </div>
